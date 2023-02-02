@@ -9,9 +9,12 @@ function Home(props) {
     const [pesquisa, setPesquisa] = useState('')
 
     useEffect(() => {
-        setDataCompleto(props.data)
-        setData(props.data)
-    })
+        axios.get('https://pokedex-server.onrender.com/pokemon').then(response => {
+            let entries = Object.entries(response.data)
+            setDataCompleto(entries)
+            setData(entries);
+        })
+      }, [])
 
     function PesquisaPokemon() {
         return (

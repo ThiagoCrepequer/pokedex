@@ -9,20 +9,11 @@ import Home  from './pages/home'
 import PokemonPage from './pages/pokemonPage'
 
 function App() {
-  const [data, setData] = useState()
-
-  useEffect(() => {
-    axios.get('https://pokedex-server.onrender.com/pokemon').then(response => {
-        let entries = Object.entries(response.data)
-        setData(entries);
-    })
-  }, [])
-
   return (
     // O correto é component e não element
     <Switch>
       <Route path='/' exact>
-        <Home data={data}></Home>
+        <Home></Home>
       </Route>
       <Route component={PokemonPage} path='/pokemon/:id'/>
     </Switch>
