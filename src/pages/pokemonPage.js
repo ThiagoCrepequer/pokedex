@@ -27,7 +27,7 @@ function PokemonPage({ match }) {
       let entries = Object.entries(response.data)
       setData(entries)
     })
-  }, [data])
+  }, [data, id])
 
   return (
     data ?
@@ -45,8 +45,8 @@ function PokemonPage({ match }) {
       </nav>
     <div className="container-detalhes">
       <div className="container-imagem">
-        <img className="imagem-pokemon" src={data[14][1].front_default}/>
-        <img className="imagem-pokemon" src={data[14][1].back_default}/>
+        <img className="imagem-pokemon" src={data[14][1].front_default} alt={'imagem da frente do pokemon ' + data[10][1]}/>
+        <img className="imagem-pokemon" src={data[14][1].back_default} alt={'imagem das costas do pokemon ' + data[10][1]}/>
 
         <div><h1>Nome:</h1> 
           <span> {data[10][1]}</span>

@@ -27,14 +27,14 @@ function Home() {
         const input_pokemon = document.getElementById('input-pokemon')
         input_pokemon.addEventListener('blur', textChange)
         input_pokemon.addEventListener('keypress', function(res) {
-            if(res.key == 'Enter') {
+            if(res.key === 'Enter') {
                 textChange()
             }
         })
     })
 
     useEffect(() => {
-        if(pesquisa == '') {
+        if(pesquisa === '') {
             setData(dataCompleto)
         } else {
             setData(dataCompleto.filter(item => item[0].startsWith(pesquisa.toLowerCase())).map(item => item))
@@ -79,7 +79,7 @@ function Home() {
     }
 
     useEffect(() => {
-        if(selecionado == 'inicio') {
+        if(selecionado === 'inicio') {
             setData(dataCompleto)
         } else {
             setData(dataCompleto.filter(element => {
