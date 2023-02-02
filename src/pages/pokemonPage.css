@@ -1,0 +1,54 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-pokemons {
+    margin: 5px;
+    display: block;
+    text-align: center;
+}
+
+.botao-menu {
+    margin: 7px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 2px solid gray;
+}
+
+.container-detalhes {
+    width: 70%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px solid gray;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.container-imagem {
+    padding-top: 0;
+    padding: 50px;
+}
+
+.imagem-pokemon {
+    width: 30%;
+    margin: -20px;
+    float: left;
+    display: inline;
+}
+
+h1 {
+    font-size: 20px;
+    display: inline;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.movimentos-pokemons {
+    margin-top: 60px;
+}

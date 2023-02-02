@@ -1,0 +1,67 @@
+#input-pokemon {
+    display: block;
+    margin: 20px auto;
+    font-size: 20px;
+    padding: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border: 2px solid gray;
+  }
+  
+  .select-type {
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  
+  .pokemons-container {
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    
+    margin: 100px;
+    margin-top: 40px;
+  }
+  
+  .bloco-pokemon {
+    border: 1px solid black;
+    background-color: rgb(241, 241, 241);
+    border-radius: 20px;
+    text-align: center;
+    margin: 15px;
+  }
+  
+  .pokemon-type {
+    display: inline;
+    margin: 5px;
+  }
+  
+  .imagem-tipos {
+    background-color: transparent;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .botao {
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+    color: black;
+    border-radius: 7px;
+    border: 2px solid gray;
+    padding: 7px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .botao:hover {
+    background-color: gray;
+  }
+  
+  img {
+    mix-blend-mode: multiply;
+  }
+  
