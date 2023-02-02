@@ -2,23 +2,22 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-function Home() {
+function Home(props) {
     const [dataCompleto, setDataCompleto] = useState([])
     const [data, setData] = useState([])
     const [selecionado, setSelecionado] = useState()
     const [pesquisa, setPesquisa] = useState()
 
     useEffect(() => {
-        axios.get('https://pokedex-server.onrender.com/pokemon').then(response => {
-            let entries = Object.entries(response.data)
-            setDataCompleto(entries);
-            setData(entries)
-        })
-    }, [])
+        setDataCompleto(props.data)
+    }, [props.data])
 
     function PesquisaPokemon() {
         return (
-            <input type="test" id='input-pokemon' placeholder='Pesquise um pokemon'/>
+            <form className='formulario-pesquisa' action=''>
+                <input type="test" id='input-pokemon' placeholder='Pesquise um pokemon'/>
+                <input type='submit' className='botao-pesquisar'/>
+            </form>
         )
     }
 
