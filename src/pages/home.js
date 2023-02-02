@@ -11,7 +11,7 @@ function Home(props) {
     useEffect(() => {
         setDataCompleto(props.data)
         setData(props.data)
-    }, [props.data])
+    })
 
     function PesquisaPokemon() {
         return (
