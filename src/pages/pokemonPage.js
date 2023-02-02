@@ -2,8 +2,6 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-
-
 function PokemonPage({ match }) {
   const [data, setData] = useState(null)
   const [proximoPokemon, setProximoPokemon] = useState()

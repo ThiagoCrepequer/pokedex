@@ -9,7 +9,7 @@ function Home() {
     const [pesquisa, setPesquisa] = useState()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/pokemon').then(response => {
+        axios.get('https://pokedex-server.onrender.com/pokemon').then(response => {
             let entries = Object.entries(response.data)
             setDataCompleto(entries);
             setData(entries)
