@@ -6,15 +6,16 @@ function Home(props) {
     const [dataCompleto, setDataCompleto] = useState([])
     const [data, setData] = useState([])
     const [selecionado, setSelecionado] = useState()
-    const [pesquisa, setPesquisa] = useState()
+    const [pesquisa, setPesquisa] = useState('')
 
     useEffect(() => {
         setDataCompleto(props.data)
+        setData(props.data)
     }, [props.data])
 
     function PesquisaPokemon() {
         return (
-            <form className='formulario-pesquisa' action=''>
+            <form className='formulario-pesquisa'>
                 <input type="test" id='input-pokemon' placeholder='Pesquise um pokemon'/>
                 <input type='submit' className='botao-pesquisar'/>
             </form>
@@ -45,7 +46,6 @@ function Home(props) {
             return setPesquisa('')
         } 
         setPesquisa(event.target.value)
-        
     }
 
     function CaixaSelecao(props) {
