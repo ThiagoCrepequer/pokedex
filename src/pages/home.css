@@ -1,17 +1,12 @@
 #input-pokemon {
+  display: block;
     font-size: 20px;
     padding: 13px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
     border: 2px solid gray;
-    margin: 10px;
-  }
-
-  .formulario-pesquisa {
-    display: block;
-    margin: 20px auto;
-    text-align: center;
+    margin: 10px auto;
   }
   
   .botao-pesquisar {
@@ -37,8 +32,8 @@
   .pokemons-container {
     display: grid;
     grid-template-columns: repeat(5, 5fr);
-    
     margin: 100px;
+    margin-bottom: 10px;
     margin-top: 40px;
   }
   
@@ -80,5 +75,26 @@
   
   img {
     mix-blend-mode: multiply;
+  }
+
+  .botoes-nav {
+    text-align: center;
+  }
+
+  .botao-proximo {
+    margin: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .botao-pagina-inicial {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .botao-anterior {
+    margin: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
   }
   
