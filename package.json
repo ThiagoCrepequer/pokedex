@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "pokedex",
+  "homepage": "http://teste-digitacao.tk/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

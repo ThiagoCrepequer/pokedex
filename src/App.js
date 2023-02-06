@@ -3,7 +3,6 @@ import './pages/home.css'
 import './pages/pokemonPage.css'
 import React, {useEffect, useState} from 'react'
 import { BrowserRouter as Routes, Route, Switch } from "react-router-dom";
-import axios from 'axios';
 
 import Home  from './pages/home'
 import PokemonPage from './pages/pokemonPage'
