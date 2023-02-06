@@ -9,16 +9,26 @@ function Home() {
     const [pesquisa, setPesquisa] = useState('')
     const [pagina, setPagina] = useState(0)
 
+    // Nesse caso o useEffect com o paramentro [] vazio é usado para fazer apenas uma requisição axios e não ficar em loop
     useEffect(() => {
         axios.get('https://pokedex-server.onrender.com/pokemon').then(response => {
             let entries = Object.entries(response.data)
             setDataCompleto(entries)
         })
-      }, [])
-
+    }, [])
+    
+    // Apesar de filtrado e filtro não serem variaveis de estado a pagina atualiza normalmente pois dataCompleto, pesquisa e selecionado são e fazem com que elas "funcionem como estado"
     // Lógica da pesquisa filtrando os dados de dataCompleto e organizando em blocos baseado na variavel quantidadeBlocos
+    // Filtro do imput search, usando o startsWith para filtrar os nome que começam com o que foi digitado
     let filtro = dataCompleto.filter(item => item[0].startsWith(pesquisa.toLowerCase()))
-    filtro = filtro.filter(item => item[1].type.some(type => type.type.name.startsWith(selecionado)))
+    filtro = filtro.filter(item => 
+        // item é o array de cada pokemon
+        item[1].type.some(type => 
+            // type pega somente o array de tipo de cada pokemon, isso é necessario pois alguns pokemons podem ter 2 tipos
+            type.type.name.startsWith(selecionado)
+        )
+    )
+    // slice retorna um array com um range (faixa) do objeto, no primeiro caso ele pega os elementos do objeto de 0 - 20 e preenche a variavel filtrado
     let filtrado = filtro.slice(pagina, pagina + quantidadeBlocos)
 
     return (

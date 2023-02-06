@@ -3,33 +3,33 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 function PokemonPage({ match }) {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState()
   const [proximoPokemon, setProximoPokemon] = useState()
   const [anteriorPokemon, setAnteriorPokemon] = useState()
-  const [id, setId] = useState(match.params.id)
+  const [id, setId] = useState()
 
+  // o useEffect é usado para atulizar o valor de id toda vez que o valor da url é alterado, fazendo com que toda a pagina seja carragada
   useEffect(() => {
     setId(match.params.id)
   }, [match.params.id])
 
-  useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${parseInt(id) + 1}`).then((response) => {
-      let entries = Object.entries(response.data)
-      setProximoPokemon(entries[10][1])
-    })
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${parseInt(id) - 1}`).then((response) => {
-      let entries = Object.entries(response.data)
-      setAnteriorPokemon(entries[10][1])
-    })
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
-      let entries = Object.entries(response.data)
-      setData(entries)
-    })
-  }, [data, id])
-
+  // Várias requests para criar o layout (Não está funcionando de uma forma eficiente)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${parseInt(id) + 1}`).then((response) => {
+    let entries = Object.entries(response.data)
+    setProximoPokemon(entries[10][1])
+  })
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${parseInt(id) - 1}`).then((response) => {
+    let entries = Object.entries(response.data)
+    setAnteriorPokemon(entries[10][1])
+  })
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
+    let entries = Object.entries(response.data)
+    setData(entries)
+  })
+  
   return (
     data ?
-    <div>
+    <>
       <nav className="menu-pokemons">
         <Link to={`/pokemon/${parseInt(id) - 1}`}>
           <button className="botao-menu">Anterior: {anteriorPokemon}</button>
@@ -72,11 +72,12 @@ function PokemonPage({ match }) {
           <span>{parseInt(data[4][1])/10} m</span>
       </div>
     </div>
-    </div>
+    </>
     :
-    <div>
-      <p>Aguarde...</p>
-    </div>
+    <>
+      <h1>Erro 404 - página não econtrada</h1>
+      <p>Id: {id} não encontrado</p>
+    </>
   )
 }
 
