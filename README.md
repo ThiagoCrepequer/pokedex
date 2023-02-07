@@ -12,4 +12,4 @@ Este é um projeto de Pokedex criado com React que utiliza Axios para fazer as r
 <h2>Uso</h2>
 A aplicação permite ao usuário pesquisar por nome ou tipo de um Pokémon específico. Quando a pesquisa é realizada, é possivel ver mais informações sobre o Pokémon, incluindo sua imagem, tipos e habilidades.
 <h2>Licença</h2>
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais informações.
+Este projeto está licenciado sob a licença MIT.
