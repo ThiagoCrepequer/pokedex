@@ -15,7 +15,7 @@ function Home() {
             let entries = Object.entries(response.data)
             setDataCompleto(entries)
         })
-    }, [dataCompleto])
+    }, [])
     
     // Apesar de filtrado e filtro não serem variaveis de estado a pagina atualiza normalmente pois dataCompleto, pesquisa e selecionado são e fazem com que elas "funcionem como estado"
     // Lógica da pesquisa filtrando os dados de dataCompleto e organizando em blocos baseado na variavel quantidadeBlocos
